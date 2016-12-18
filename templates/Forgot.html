@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="static/favicon.ico" type='image/x-icon'/>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Forgot</title>
+</head>
+<body background="\static\college1.jpg">
+<form style="width:350px; margin-left:40%;margin-top:8%; background-color: rgba(245, 245, 245, 0.8); "action = "{{ url_for('forgothandling') }}" method = "post">
+
+  <br/><center><div style="text-align:center" class=""WelcomeMessage>
+            <h3>Enter your registered Email ID</h3></div>
+
+<div class="form-group">
+    <label for="inputPassword4"></label>
+    <br/>
+<input style="width:300px"  type="text" name = "Email" class="form-control" id="inputPassword4" placeholder="Email ID">
+</div>
+    <br/>
+<!---
+  <div class="form-group">
+    <label for="inputPassword3">Password</label>
+    <input style="width:300px" type="password" name="Password" class="form-control" id="inputPassword3" placeholder="Password">
+  </div> -->
+          <input type="radio" name="person" value="Faculty" id="Faculty"><label for="Faculty">Faculty  </label>
+          <input type="radio" name="person" value="Student" id="Student"><label for="Student">    Student</label>
+     <br/>
+     <br/>
+<button type="submit" name="submit" class="submit" value="submit">Submit</button>
+     <br/>
+     <br/>
+    {% if text %}
+    <font color="red"><h4>{{text}}</h4></font>
+    {%endif%}
+        <br/>
+     <br/>
+
+    </form>
+</body>
+</html>

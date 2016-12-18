@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="static/favicon.ico" type='image/x-icon'/>
+    <title>Grades</title>
+  <!---  <img src="\static\page_header_spark_3.jpg"  width="1350" height="228"> -->
+<style>
+
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,td {
+    <!--background-color: #4CAF50;-->
+    color: white;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+</style>
+</head>
+<body background="\static\grades4.jpg">
+
+        <br/><center><div style="text-align:right" class=""WelcomeMessage>
+            <h2><a href="{{ url_for('clearsession') }}"> Log out </a></div></h2>
+        <br/>
+
+
+
+<!--<a href="{{ url_for('clearsession') }}"> Log out </a> -->
+<div >
+<br>
+     <br/><center><div style="text-align:left" class=""WelcomeMessage>
+
+    <h1>
+{% if sname %}
+            Hi {{sname.sn}}!!!
+    <br>
+{% endif %}
+<br>
+</h1>
+        <br/></div>
+</div>
+
+<div>
+        <table border = 1 >
+         <thead bgcolor="#00FF00">
+            <td>Course Name</td>
+            <td>MidTerm1</td>
+            <td>MidTerm2</td>
+            <td>MidTerm3</td>
+            <td>FinalGrade</td>
+         </thead>
+
+         {% for r in rows %}
+            <tr bgcolor="#FFFFFF">
+               <td bgcolor="#FFFFFF">{{r["cn"]}}</td>
+               <td bgcolor="#FFFFFF">{{r["mt1"]}}</td>
+               <td bgcolor="#FFFFFF">{{r["mt2"]}}</td>
+               <td bgcolor="#FFFFFF">{{r["mt3"]}}</td>
+               <td bgcolor="#FFFFFF">{{r["fg"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+</div>
+</body>
+</html>

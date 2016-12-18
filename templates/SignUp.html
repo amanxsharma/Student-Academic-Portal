@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Academic Portal</title>
+</head>
+<body background="\static\users.png">
+<form style="width:350px; margin-left:40%;margin-top:3%; background-color: rgba(245, 245, 245, 0.9);" action = "http://localhost:5000/signup" method = "post">
+
+        <br/><center><div style="text-align:center" class=""WelcomeMessage>
+
+            <h1>Student Academic Portal</h1></div>
+
+        <h1>Register for New User</h1>
+    <h3>Enter Your Name</h3>
+         <input type="text" name="Name" placeholder="Enter your name">
+            <h3>Enter User Name</h3>
+         <input type="text" name="UserName" placeholder="Choose a user name">
+            <h3>Password</h3>
+         <input type="password" name="Password" placeholder ="Choose a password">
+        <h3>Email Id</h3>
+         <input type="text" name="email" placeholder ="Choose an email Id">
+            <h3>Faculty/Student</h3>
+          <input type="radio" name="person" value="Faculty" id="Faculty"><label for="Faculty">Faculty</label>
+          <input type="radio" name="person" value="Student" id="Student"><label for="Student">Student</label>
+    </div>
+         <button type="submit" name="submit" class="submit" value="submit">SignUp</button>
+        </div>
+    </center>
+    </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="icon" href="static/favicon.ico" type='image/x-icon'/>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+
+    <title>Student Academic Portal</title>
+</head>
+<body background="\static\grades9.jpg">
+
+    </center>
+
+
+    <form style="width:350px; margin-left:40%;margin-top:3%; background-color: rgba(245, 245, 245, 0.9);" action = "{{ url_for('updategrades') }}" method = "post">
+    <br/><center><div style="text-align:center" class=""WelcomeMessage>
+            <h3>Student Academic Portal</h3></div>
+        <br/>
+    <h3>Enter Course ID</h3>
+<input type="text" name="CourseId" placeholder={{a}}>
+        <h3>Student Id</h3>
+<input type="text" name="StudentId" placeholder={{b}}>
+ <h3>Midterm1 Marks</h3>
+<input type="text" name="MidTerm1" placeholder={{c}}>
+<h3>Midterm2 Marks</h3>
+<input type="text" name="MidTerm2" placeholder={{d}}>
+<h3>Midterm3 Marks</h3>
+<input type="text" name="MidTerm3" placeholder={{e}}>
+<h3>Final grades A/B/C</h3>
+<input type="text" name="FinalGrades" placeholder={{f}}>
+        <br/>
+        <br/>
+        </div>
+         <button type="submit" name="update" class="update" value="update">update Grades</button>
+        <br>
+        </div>
+        <br/>
+    </form>
+</body>
+</html>

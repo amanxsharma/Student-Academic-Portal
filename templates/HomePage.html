@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<link lang="en">
+<head >
+    <link rel="icon" href="static/favicon.ico" type='image/x-icon'/>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Student Academic Portal</title>
+
+</head>
+
+
+
+
+
+
+
+<body background="\static\Homepage.jpg">
+<br/>
+<br/>
+
+
+<form style="width:350px; margin-left:40%;margin-top:8%; background-color: rgba(245, 245, 245, 0.9);"action = "http://localhost:5000/login" method = "post">
+        <br/><center><div style="text-align:center" class=""WelcomeMessage>
+            <h1>Student Academic Portal</h1></div>
+        <br/>
+  <div class="form-group">
+    <label for="inputEmail3">User Name</label>
+    <input style="width:300px" type="text" name="UserName" type="email" class="form-control" id="inputEmail3" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3">Password</label>
+    <input style="width:300px" type="password" name="Password" class="form-control" id="inputPassword3" placeholder="Password">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="radio" name="person" value="Faculty" id="Faculty"><label for="Faculty">Faculty</label>
+      <input type="radio" name="person" value="Student" id="Student"><label for="Student">Student</label>
+    </label>
+  </div>
+  <button type="submit"  name="submit" class="btn btn-default">Submit</button><br/>
+            <br/>
+        <a href = "{{ url_for('forgotpassword') }}">Forgot Password</a>
+        <a href = "{{ url_for('signuppage') }}">Signup</a></center>
+        <br/>
+
+
+     {% if text %}
+     <br/><center><div style="text-align:center" class=""WelcomeMessage>
+
+             <font color="red"><h4>{{text}}</h4></font>
+
+        <br/>
+     {%endif%}
+
+</form>
+
+
+</body>
+</html>

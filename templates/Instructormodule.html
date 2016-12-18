@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="icon" href="static/favicon.ico" type='image/x-icon'/>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+
+    <title>Student Academic Portal</title>
+    <script>
+        function send(str){
+
+        }
+
+    </script>
+<style>
+
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,td {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+</style>
+
+
+</head>
+
+<body background="\static\grades9.jpg">
+ <center>
+     <div style="text-align:right" class=""WelcomeMessage>
+            <h4>
+                <a href="{{ url_for('clearsession') }}"> Log out </a>
+            </h4>
+     </div>
+
+ </center>
+
+ <div style="text-align:left" class=""WelcomeMessage>
+
+
+   <h3>
+{% if sname %}
+            Professor {{sname.fn}}!!!
+    <br>
+{% endif %}
+<br>
+</h3>
+        <br/></div>
+</div>
+
+
+   <table border = 1 >
+         <thead bgcolor="#00FF00">
+            <td>Course Name</td>
+            <td>Student Id</td>
+             <td>Student Name</td>
+            <td>MidTerm1</td>
+            <td>MidTerm2</td>
+            <td>MidTerm3</td>
+            <td>FinalGrade</td>
+            <td>Click to update</td>
+
+         </thead>
+
+         {% for r in rows %}
+            <tr bgcolor="#FFFFFF">
+                 <form action = "{{ url_for('callhtml',a = r['crid'],b = r['sid'],c =r['mt1'], d = r['mt2'],e = r['mt3']  ) }}" method = 'post'>
+               <td bgcolor="#FFFFFF">{{r["crid"]}}</td>
+                 <td bgcolor="#FFFFFF">{{r["sid"]}}</td>
+                    <td bgcolor="#FFFFFF">{{r["sn"]}}</td>
+               <td bgcolor="#FFFFFF">{{r["mt1"]}}</td>
+               <td bgcolor="#FFFFFF">{{r["mt2"]}}</td>
+               <td bgcolor="#FFFFFF">{{r["mt3"]}}</td>
+               <td bgcolor="#FFFFFF">{{r["fg"]}}</td>
+                <td bgcolor="#FFFFFF"><button type="submit"  name="submit" class="btn btn-default">Update</button></td></form>
+            </tr>
+         {% endfor %}
+      </table>
+</body>
+</html>

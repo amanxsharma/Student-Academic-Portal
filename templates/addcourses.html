@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body background="\static\pic2.jpg">
+
+<form style="width:350px; margin-left:40%;margin-top:8%; background-color: rgba(245, 245, 245, 0.9);"action = "{{ url_for('validcourse') }}" method = "POST">
+        <br/><center><div style="text-align:center" class=""WelcomeMessage>
+            <h1>Admin portal to add courses</h1></div>
+        <br/>
+  <div class="form-group">
+    <label for="inputEmail3">Course Id</label>
+      <br>
+      </br>
+    <input style="width:300px" type="text" name="CourseId" class="form-control" id="inputEmail3" placeholder="Course Id">
+  </div>
+    <br>
+    </br>
+  <div class="form-group">
+    <label for="inputPassword3">Course Name</label>
+      <br>
+      </br>
+    <input style="width:300px" type="text" name="CourseName" class="form-control" id="inputPassword3" placeholder="Course Name">
+  </div>
+    <br>
+    </br>
+    <div class="form-group">
+    <label for="inputPassword4">Faculty Id</label>
+        <br>
+        </br>
+    <input style="width:300px" type="text" name="FID" class="form-control" id="inputPassword4" placeholder="Faculty Id">
+  </div>
+    <br>
+
+
+      {% if text %}
+            <br/><center><div style="text-align:center" class=""WelcomeMessage>
+             <font color="red"><h4>{{text}}</h4></font>
+            <br/>
+        {%endif%}
+
+  <button type="submit"  name="submit" class="btn btn-default">Submit</button><br/>
+    <br>
+
+    </div>
+
+</form>
+
+</body>
+</html>

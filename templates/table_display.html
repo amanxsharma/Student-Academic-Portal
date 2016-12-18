@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="static/favicon.ico" type='image/x-icon'/>
+    <title>Grades</title>
+
+<style>
+
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,td {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+</style>
+</head>
+<body>
+
+<form action = "{{ url_for('callhtml') }}" method = "post">
+<div>
+        <table border = 1>
+         <thead>
+            <td>Course ID</td>
+            <td>MidTerm1</td>
+            <td>MidTerm2</td>
+            <td>MidTerm3</td>
+            <td>FinalGrade</td>
+         </thead>
+
+         {% for r in rows %}
+            <tr>
+               <td>{{r["cn"]}}</td>
+               <td>{{r["mt1"]}}</td>
+               <td>{{r["mt2"]}}</td>
+               <td>{{r["mt3"]}}</td>
+               <td>{{r["fg"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+</div>
+
+</div>
+         <button type="submit" name="update" class="update" value="update">update Grades</button>
+        </div>
+    </form>
+
+
+</body>
+</html>
